@@ -9,7 +9,7 @@ import { DepartamentoComponent } from './departamento/departamento.component';
 const routes: Routes = [
 {path:'',component:HomeComponent},
 {path:'funcionarios',component:FuncionariosComponent},
-{path:'departmento',component:DepartamentoComponent}
+{path:'departamento',component:DepartamentoComponent}
 
 ];
 
