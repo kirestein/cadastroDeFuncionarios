@@ -1,3 +1,4 @@
+import { SharedService } from './../shared.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FuncionariosComponent implements OnInit {
 
-  constructor() { }
+  constructor(private  service:SharedService) { }
 
+  FuncionarioList:any = []
+  Titulo!:string
+  ActivateAddEdditFuncComp:boolean = false
+  func: any
   ngOnInit(): void {
+  }
+
+  addClick() {
+    this.func={
+      FuncionarioId:0,
+      FuncionarioName:"",
+      Departamento:"",
+      DataDeInicio:"",
+      AquirvoFoto:""
+    }
+
+    this.Titulo="Adicionar Novo Funcionário"
+    this.ActivateAddEdditFuncComp=true
   }
 
 }
