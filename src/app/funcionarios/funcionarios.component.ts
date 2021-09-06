@@ -30,4 +30,6 @@ export class FuncionariosComponent implements OnInit {
     this.ActivateAddEdditFuncComp=true
   }
 
+  
+
 }

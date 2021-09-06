@@ -16,7 +16,11 @@ h1 {
   text-align: center;
 }
 
+li {
+  cursor: pointer;
+}
+
 p {
-  text-decoration: none;
+
   color: #000;
 }
