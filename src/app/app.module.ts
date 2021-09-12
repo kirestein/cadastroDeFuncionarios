@@ -9,10 +9,12 @@ import { ShowDepComponent } from './departamento/show-dep/show-dep.component';
 import { AddEdiFuncComponent } from './funcionarios/add-edi-func/add-edi-func.component';
 import { ShowFuncComponent } from './funcionarios/show-func/show-func.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { SharedService } from './shared.service';
+
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HomeComponent } from './home/home.component';
+import { SharedService } from './service';
+
 
 @NgModule({
   declarations: [
@@ -31,7 +33,7 @@ import { HomeComponent } from './home/home.component';
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
 
   ],
   providers: [SharedService],

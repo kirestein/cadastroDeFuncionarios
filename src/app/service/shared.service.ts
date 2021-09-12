@@ -50,7 +50,7 @@ readonly PhotoUrl = "http://localhost:53535/Photos/";
     return this.http.post(this.APIUrl+'/Funcionarios/SaveFile',val);
   }
 
-  getAllDepartmentNames():Observable<any[]>{
+  getAllDepartmentosNames():Observable<any[]>{
     return this.http.get<any[]>(this.APIUrl+'/Funcionarios/GetAllDepartmentNames');
   }
 

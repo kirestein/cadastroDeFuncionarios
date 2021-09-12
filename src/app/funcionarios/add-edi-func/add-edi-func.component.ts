@@ -1,4 +1,4 @@
-import { SharedService } from 'src/app/shared.service';
+import { SharedService } from 'src/app/service';
 import { Component, OnInit, Input } from '@angular/core';
 import { ShowFuncComponent } from '../show-func/show-func.component';
 
@@ -21,11 +21,11 @@ export class AddEdiFuncComponent implements OnInit {
   DepartmentosList:any=[];
 
   ngOnInit(): void {
-    this.loadDepartmentList();
+    this.loadDepartmentoList();
   }
 
-  loadDepartmentList(){
-    this.service.getAllDepartmentNames().subscribe((data:any)=>{
+  loadDepartmentoList(){
+    this.service.getAllDepartmentosNames().subscribe((data:any)=>{
       this.DepartmentosList=data;
 
       this.FuncionarioId=this.func.FuncionarioId;
@@ -37,7 +37,7 @@ export class AddEdiFuncComponent implements OnInit {
     });
   }
 
-  addEmployee(){
+  addFuncionario(){
     var val = {FuncionarioId:this.FuncionarioId,
                 FuncionarioName:this.FuncionarioName,
                 Departmento:this.Departmento,

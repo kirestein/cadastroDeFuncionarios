@@ -1,4 +1,4 @@
-import { SharedService } from './../shared.service';
+import { SharedService } from '../service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -30,6 +30,6 @@ export class FuncionariosComponent implements OnInit {
     this.ActivateAddEdditFuncComp=true
   }
 
-  
+
 
 }
