@@ -8,7 +8,7 @@ import { SharedService } from 'src/app/service';
 })
 export class ShowDepComponent implements OnInit {
 
-  constructor(private service:SharedService) { }
+  constructor(protected service:SharedService) { }
 
   DepartmentoList:any=[];
 
