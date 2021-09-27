@@ -10,7 +10,7 @@ export class ShowDepComponent implements OnInit {
 
   constructor(protected service:SharedService) { }
 
-  DepartmentoList:any=[];
+  DepartmentoList!:DepartamentoObj[];
 
   ModalTitle!:string;
   ActivateAddEditDepComp:boolean=false;
@@ -29,24 +29,27 @@ export class ShowDepComponent implements OnInit {
       DepartmentoId:0,
       DepartmentoName:""
     }
+
     this.ModalTitle="Adicionar Departamento";
     this.ActivateAddEditDepComp=true;
+    // this.closeClick();
 
   }
 
-  editClick(item:any){
-    this.dep=item;
+  editClick(id: number){
+    this.dep=id;
     this.ModalTitle="Editar Departamento";
     this.ActivateAddEditDepComp=true;
   }
 
-  deleteClick(item:any){
-    if(confirm('Quer, mesmo, excluir este registro?')){
-      this.service.deleteDepartmento(item.DepartmentId).subscribe(data=>{
+  deleteClick(id: number){
+    if(confirm(`Deseja realmente deletar o elemento do id ${id}`)){
+      this.service.deleteDepartmento(id).subscribe(data=>{
         alert(data.toString());
         this.refreshDepList();
       })
     }
+    this.refreshDepList();
   }
 
   closeClick(){
@@ -59,6 +62,7 @@ export class ShowDepComponent implements OnInit {
     this.service.getDepList().subscribe(data=>{
       this.DepartmentoList=data;
       this.DepartmentoListWithoutFilter=data;
+
     });
   }
 
@@ -86,4 +90,9 @@ export class ShowDepComponent implements OnInit {
     })
   }
 
+};
+
+export class DepartamentoObj {
+  id_departamentos!: number;
+  nome_departamento!: string;
 }

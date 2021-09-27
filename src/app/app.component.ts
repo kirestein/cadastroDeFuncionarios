@@ -14,17 +14,6 @@ export class AppComponent implements OnInit {
   constructo(){}
 
   ngOnInit(){
-    document.querySelectorAll(".nav-link").forEach(a => {
-      a.addEventListener("click", () => {
-        a.classList.add("active");
-        document.querySelectorAll(".nav-link").forEach(b => {
-          b.addEventListener("click",  () => {
-            a.classList.remove("active");
-            b.classList.add("active")
-          })
-        })
-      })
-    })
   }
 
 

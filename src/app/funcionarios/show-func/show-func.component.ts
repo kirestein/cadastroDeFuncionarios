@@ -41,7 +41,7 @@ export class ShowFuncComponent implements OnInit {
 
   deleteClick(item:any){
     if(confirm('Quer mesmo excluir este registro?')){
-      this.service.deleteFuncionario(item.FuncionarioId).subscribe(data=>{
+      this.service.deleteFuncionario(item.FuncionarioId, item.id).subscribe(data=>{
         alert(data.toString());
         this.refreshFuncList();
       })

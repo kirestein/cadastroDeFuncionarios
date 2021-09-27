@@ -19,6 +19,8 @@ export class AddEditDepComponent extends ShowDepComponent implements OnInit {
   @Input() dep:any;
 
   public DepartmentoName!:string;
+  public DepartamentId!: number;
+
 
   ngOnInit(): void {
 
@@ -39,7 +41,8 @@ export class AddEditDepComponent extends ShowDepComponent implements OnInit {
   }
 
   updateDepartment(){
-    var val = {DepartmentoName:this.DepartmentoName};
+    var val = {nomeDepartamento:this.DepartmentoName};
+
     this.service.updateDepartmento(val).subscribe(res=>{
     alert(res.toString());
     });
